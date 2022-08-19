@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: center;">
+        <ui:VisualElement name="ResultPane" style="background-color: rgba(255, 255, 255, 255);">
+            <ui:Label tabindex="-1" text="Victory" display-tooltip-when-elided="true" name="ResultTitle" style="color: rgba(0, 0, 0, 255); font-size: 55px;" />
+            <ui:Button tabindex="-1" text="Return To Start" display-tooltip-when-elided="true" name="ReturnToStartButton" style="font-size: 22px;" />
+            <ui:Button tabindex="-1" text="Exit" display-tooltip-when-elided="true" name="ExitButton" style="font-size: 25px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
