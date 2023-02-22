@@ -959,6 +959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 6928957755387722046, guid: 6a3fee22c7d039c44868fe2316081455, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 6481aaa89361f364a99a27bc80ed1f5a, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a3fee22c7d039c44868fe2316081455, type: 3}
