@@ -210,7 +210,6 @@ public class EditorFlowWindow : EditorWindow
             ScriptableObjectClassDefinitionsOutput();
         }
 
-
         EditorGUILayout.BeginHorizontal();
         scriptableObjectsInputValue = EditorGUILayout.TextField(scriptableObjectsInputValue);
         if (GUILayout.Button("+"))
@@ -614,20 +613,26 @@ public class EditorFlowWindow : EditorWindow
             EditorGUILayout.LabelField("No abstract ScriptableObject definitions in Assembly");
         }
     }
+
+    Vector2 scrollPosition;
+    int gridSelection;
+
     void ScriptableObjectClassDefinitionsOutput()
     {
         if (scriptableObjectClassDefinitionNames.Length > 0)
         {
             GUI.backgroundColor = defaultBackgroundColor;
-            EditorGUILayout.BeginHorizontal();
-            for (int i = 0; i < scriptableObjectClassDefinitionNames.Length; i++)
-            {
-                if (GUILayout.Button(scriptableObjectClassDefinitionNames[i]))
-                {
-                    currentScriptableObjectSelectionName = scriptableObjectClassDefinitionNames[i];
-                }
-            }
-            EditorGUILayout.EndHorizontal();
+            gridSelection = GUILayout.SelectionGrid(gridSelection, scriptableObjectClassDefinitionNames, 5, GUILayout.MaxWidth(1500f));
+            currentScriptableObjectSelectionName = scriptableObjectClassDefinitionNames[gridSelection];
+            //scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);            
+            //for (int i = 0; i < scriptableObjectClassDefinitionNames.Length; i++)
+            //{
+            //    if (GUILayout.Button(scriptableObjectClassDefinitionNames[i]))
+            //    {
+            //        currentScriptableObjectSelectionName = scriptableObjectClassDefinitionNames[i];
+            //    }
+            //}            
+            //EditorGUILayout.EndScrollView();
         }
         else
         {
