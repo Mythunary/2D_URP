@@ -207,7 +207,7 @@ public class EditorFlowWindow : EditorWindow
         }
         else
         {
-            ScriptableObjectClassDefinitionsOutput();
+            DisplayScriptableObjectTypesForSelection();
         }
 
         EditorGUILayout.BeginHorizontal();
@@ -239,6 +239,55 @@ public class EditorFlowWindow : EditorWindow
             AssetDatabase.Refresh();
         }
         EditorGUILayout.EndHorizontal();
+    }
+
+    List<string[]> activeScriptableObjectTypesDisplayList;
+    int displayListCount;
+    List<int> selectionIndices;
+    List<int> previousSelectionIndices;
+
+    void DisplayScriptableObjectTypesForSelection()
+    {        
+        for (int i = 0; i < displayListCount; i++)
+        {                        
+            selectionIndices[i] = GUILayout.SelectionGrid(selectionIndices[i], activeScriptableObjectTypesDisplayList[i], 5, GUILayout.MaxWidth(1500f));
+            if(previousSelectionIndices[i] != selectionIndices[i])
+            {
+                if (displayListCount > i + 1)
+                {
+                    activeScriptableObjectTypesDisplayList.RemoveRange(i + 1, displayListCount - i - 1);
+                    selectionIndices.RemoveRange(i + 1, displayListCount - i - 1);
+                    previousSelectionIndices.RemoveRange(i + 1, displayListCount - i - 1);
+                    displayListCount = activeScriptableObjectTypesDisplayList.Count();
+                }
+                UpdateActiveScriptableObjectTypesDisplayList(activeScriptableObjectTypesDisplayList[i][selectionIndices[i]]);
+                previousSelectionIndices[i] = selectionIndices[i];
+            }
+            EditorGUILayout.Separator();
+        }
+    }
+
+    void UpdateActiveScriptableObjectTypesDisplayList(string newSelectionTypeName)
+    {
+        Type selectionType = currentAssemblyTypes.Where(t => t.Name == newSelectionTypeName).Select(t => t).ToArray()[0];
+        bool selectionIsAbstractType = selectionType.IsAbstract;
+        if (selectionIsAbstractType)
+        {
+            string[] selectionSubTypeNames = currentAssemblyTypes.Where(t => t.IsSubclassOf(selectionType)).Select(t => t.Name).ToArray();
+            
+            if(selectionSubTypeNames != null && selectionSubTypeNames != default && selectionSubTypeNames.Count() > 0)
+            {
+                activeScriptableObjectTypesDisplayList.Add(selectionSubTypeNames);
+                selectionIndices.Add(-1);
+                previousSelectionIndices.Add(-1);
+                displayListCount = activeScriptableObjectTypesDisplayList.Count();
+                currentScriptableObjectSelectionName = default;
+            }
+        }
+        else
+        {
+            currentScriptableObjectSelectionName = newSelectionTypeName;
+        }
     }
 
     void ToggleScriptableObjectsActiveColor(string name)
@@ -591,6 +640,7 @@ public class EditorFlowWindow : EditorWindow
         }
     }
 
+    
     string currentScriptableObjectSelectionName;
 
     void ScriptableObjectAbstractDefinitionsOutput()
@@ -623,16 +673,7 @@ public class EditorFlowWindow : EditorWindow
         {
             GUI.backgroundColor = defaultBackgroundColor;
             gridSelection = GUILayout.SelectionGrid(gridSelection, scriptableObjectClassDefinitionNames, 5, GUILayout.MaxWidth(1500f));
-            currentScriptableObjectSelectionName = scriptableObjectClassDefinitionNames[gridSelection];
-            //scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);            
-            //for (int i = 0; i < scriptableObjectClassDefinitionNames.Length; i++)
-            //{
-            //    if (GUILayout.Button(scriptableObjectClassDefinitionNames[i]))
-            //    {
-            //        currentScriptableObjectSelectionName = scriptableObjectClassDefinitionNames[i];
-            //    }
-            //}            
-            //EditorGUILayout.EndScrollView();
+            currentScriptableObjectSelectionName = scriptableObjectClassDefinitionNames[gridSelection];            
         }
         else
         {
@@ -814,16 +855,25 @@ public class EditorFlowWindow : EditorWindow
             EditorGUILayout.LabelField("No struct types in Assembly.");
         }
     }
-
-
+        
+    Type[] currentAssemblyTypes;
 
     void SetActiveAssembly(string name)
     {
         currentlySelectedAssembly = Assembly.Load(new AssemblyName(name));
-        Type[] currentAssemblyTypes = currentlySelectedAssembly.GetTypes();
+        currentAssemblyTypes = currentlySelectedAssembly.GetTypes();
 
-        //scriptableObjectAbstractDefinitionNames = currentAssemblyTypes.Where(t => t.IsAbstract && t.BaseType == typeof(ScriptableObject)).Select(t => t.Name).ToArray();
+        activeScriptableObjectTypesDisplayList = new List<string[]>();
+        selectionIndices = new List<int>();
+        previousSelectionIndices = new List<int>();
+        selectionIndices.Add(-1);
+        previousSelectionIndices.Add(-1);
+
+        scriptableObjectAbstractDefinitionNames = currentAssemblyTypes.Where(t => t.IsAbstract && t.BaseType == typeof(ScriptableObject)).Select(t => t.Name).ToArray();
         scriptableObjectClassDefinitionNames = currentAssemblyTypes.Where(t => t.IsAbstract == false && typeof(ScriptableObject).IsAssignableFrom(t)).Select(t => t.Name).ToArray();
+
+        activeScriptableObjectTypesDisplayList.Add(scriptableObjectAbstractDefinitionNames);
+        displayListCount = activeScriptableObjectTypesDisplayList.Count();
 
         //scriptableObjectAbstractInstanceNames = GatherScriptableObjectNamesAtRoute(scriptableObjectsAbstractInstancesRoute);
         //scriptableObjectClassInstanceNames = GatherScriptableObjectNamesAtRoute(scriptableObjectsBaseInstancesRoute);
