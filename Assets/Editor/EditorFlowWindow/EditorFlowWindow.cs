@@ -191,6 +191,9 @@ public class EditorFlowWindow : EditorWindow
     }
 
     string scriptableObjectsInputValue;
+    string activeSearchValue;
+    string previousActiveSearchValue;
+    bool enterPressedOnScriptableObjectField;
 
     void ScriptableObjectsOutput()
     {
@@ -200,20 +203,42 @@ public class EditorFlowWindow : EditorWindow
         //GUI.backgroundColor = scriptableObjectsInstancesIsSelected ? scriptableObjectsInstancesSelectedColor : scriptableObjectsInstancesColor;
         //if (GUILayout.Button("Instances")) { currentScriptableObjectSelection = ScriptableObjectsInstancesOutput; ToggleScriptableObjectsActiveColor("Instances");}
         EditorGUILayout.EndHorizontal();
-
+        activeSearchValue = EditorGUILayout.TextField(activeSearchValue);
+        if(activeSearchValue == "" && previousActiveSearchValue != "")
+        {
+            searchedSelectionTypes = new string[0];
+            previousActiveSearchValue = "";
+        }
+        else if(activeSearchValue != previousActiveSearchValue)
+        {
+            GatherSearchedTypesForSelection();
+            previousActiveSearchValue = activeSearchValue;
+        }
+        EditorGUILayout.Separator();
         if(currentlySelectedAssembly == null || currentlySelectedAssembly == default)
         {
             EditorGUILayout.LabelField("No Assembly found.");
         }
         else
         {
-            DisplayScriptableObjectTypesForSelection();
+            OutputSearchedTypesForSelection();
         }
 
         EditorGUILayout.BeginHorizontal();
         scriptableObjectsInputValue = EditorGUILayout.TextField(scriptableObjectsInputValue);
-        if (GUILayout.Button("+"))
+
+        if (Event.current.type == EventType.KeyUp)
         {
+            if (Event.current.keyCode == KeyCode.Return)
+            {
+                enterPressedOnScriptableObjectField = true;
+            }
+        }
+
+        if (enterPressedOnScriptableObjectField || GUILayout.Button("+"))
+        {
+            enterPressedOnScriptableObjectField = false;
+
             string[] nameSegments = new string[0];
 
             if (scriptableObjectsInputValue.Contains("+"))
@@ -230,15 +255,44 @@ public class EditorFlowWindow : EditorWindow
                     AssetDatabase.CreateAsset(newSO, buildRoute);
                 }
             }
-            else
+            else if(scriptableObjectsInputValue != "")
             {
                 string buildRoute = currentlySelectedOutputRoute + "/" + scriptableObjectsInputValue + ".asset";
+                ScriptableObject newSO = CreateInstance(scriptableObjectsInputValue);
+                AssetDatabase.CreateAsset(newSO, buildRoute);
+            }
+            else
+            {
+                string buildRoute = currentlySelectedOutputRoute + "/" + currentScriptableObjectSelectionName + ".asset";
                 ScriptableObject newSO = CreateInstance(currentScriptableObjectSelectionName);
                 AssetDatabase.CreateAsset(newSO, buildRoute);
             }
             AssetDatabase.Refresh();
         }
         EditorGUILayout.EndHorizontal();
+    }
+
+    string[] searchedSelectionTypes;
+
+    void GatherSearchedTypesForSelection()
+    {
+        searchedSelectionTypes = currentAssemblyTypes.Where(t => t.IsClass && typeof(ScriptableObject).IsAssignableFrom(t) && t.Name.Contains(activeSearchValue)).Select(t => t.Name).ToArray();
+    }
+
+    int currentSearchedTypeIndex;
+    int previousCurrentSearchedTypeIndex;
+
+    void OutputSearchedTypesForSelection()
+    {
+        if (searchedSelectionTypes != null && searchedSelectionTypes != default && searchedSelectionTypes.Length > 0)
+        {
+            currentSearchedTypeIndex = GUILayout.SelectionGrid(currentSearchedTypeIndex, searchedSelectionTypes, 5, GUILayout.MaxWidth(1500f));
+            if(previousCurrentSearchedTypeIndex != currentSearchedTypeIndex)
+            {
+                currentScriptableObjectSelectionName = searchedSelectionTypes[currentSearchedTypeIndex];
+                previousCurrentSearchedTypeIndex = currentSearchedTypeIndex;
+            }
+        }
     }
 
     List<string[]> activeScriptableObjectTypesDisplayList;
