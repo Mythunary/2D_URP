@@ -1,4 +1,6 @@
-public class IntVariable : AVariable
+using UnityEngine;
+
+public class IntVariable : ScriptableObject
 {
     public int value;
 }

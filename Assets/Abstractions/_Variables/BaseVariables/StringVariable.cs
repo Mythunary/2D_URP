@@ -1,4 +1,6 @@
-public class StringVariable : AVariable
+using UnityEngine;
+
+public class StringVariable : ScriptableObject
 {
     public string value;
 }

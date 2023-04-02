@@ -1,6 +1,6 @@
-public class ReactionContainer : AReactionComposite
+public class ReactionContainer : AReaction
 {
-    public AReactionComposite[] reactions;
+    public AReaction[] reactions;
 
     public override void React()
     {

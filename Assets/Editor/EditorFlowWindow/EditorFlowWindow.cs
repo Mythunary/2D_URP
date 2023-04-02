@@ -258,7 +258,7 @@ public class EditorFlowWindow : EditorWindow
             else if(scriptableObjectsInputValue != "")
             {
                 string buildRoute = currentlySelectedOutputRoute + "/" + scriptableObjectsInputValue + ".asset";
-                ScriptableObject newSO = CreateInstance(scriptableObjectsInputValue);
+                ScriptableObject newSO = CreateInstance(currentScriptableObjectSelectionName);
                 AssetDatabase.CreateAsset(newSO, buildRoute);
             }
             else

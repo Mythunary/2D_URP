@@ -356,10 +356,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c0b9f48d7b1a74db018054ecb09880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyReactionsDown: []
-  keyInputsDown: []
-  keyReactionsUp: []
-  keyInputsUp: []
+  keysDown: {fileID: 11400000, guid: b3725dde01a71d24fac1b84d24318043, type: 2}
+  keysUp: {fileID: 11400000, guid: e786e8939d747e2458ff03749ccfcc20, type: 2}
 --- !u!4 &1365096695
 Transform:
   m_ObjectHideFlags: 0

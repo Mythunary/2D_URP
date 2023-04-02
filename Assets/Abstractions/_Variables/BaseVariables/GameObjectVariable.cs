@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameObjectVariable : AVariable
+public class GameObjectVariable : ScriptableObject
 {
     public GameObject value;
 }

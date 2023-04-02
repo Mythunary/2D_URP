@@ -1,4 +1,6 @@
-public class FloatVariable : AVariable
+using UnityEngine;
+
+public class FloatVariable : ScriptableObject
 {
     public float value;
 }

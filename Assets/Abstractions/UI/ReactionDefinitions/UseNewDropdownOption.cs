@@ -1,9 +1,9 @@
-public class UseNewDropdownOption : AUIReaction
+public class UseNewDropdownOption : AReaction
 {
     public IntVariable data;
     public StringVariable textData;
     public StringArrayVariable options;
-    public AReactionComposite setText;
+    public AReaction setText;
 
     public override void React()
     {

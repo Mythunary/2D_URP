@@ -1,7 +1,7 @@
 public class ReceiveSliderUpdate : AFloatInReaction
 {
     public FloatVariable dataHolder;
-    public AReactionComposite reactOnSliderUpdate;
+    public AReaction reactOnSliderUpdate;
 
     public override void React(float value)
     {

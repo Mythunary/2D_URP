@@ -1,7 +1,7 @@
 public class ReceiveInputFieldUpdate : AStringInReaction
 {
     public StringVariable valueHolder;
-    public AReactionComposite reactionOnNewValue;
+    public AReaction reactionOnNewValue;
 
     public override void React(string value)
     {

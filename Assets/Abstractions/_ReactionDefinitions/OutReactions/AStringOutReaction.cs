@@ -1,4 +1,6 @@
-public abstract class AStringOutReaction : AnOutReaction
+using UnityEngine;
+
+public abstract class AStringOutReaction : ScriptableObject
 {
     public abstract string React();
 }

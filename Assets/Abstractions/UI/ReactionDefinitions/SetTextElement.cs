@@ -1,6 +1,6 @@
 using TMPro;
 
-public class SetTextElement : AUIReaction
+public class SetTextElement : AReaction
 {
     public StringVariable data;
     public TMP_Text text;    

@@ -1,6 +1,6 @@
-public class ReactiveButtonReaction : AUIReaction
+public class ReactiveButtonReaction : AReaction
 {
-    public AReactionCompositeVariable controlFlowReaction;
+    public AReactionVariable controlFlowReaction;
 
     public override void React()
     {

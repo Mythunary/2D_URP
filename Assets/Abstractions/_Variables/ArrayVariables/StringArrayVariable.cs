@@ -1,4 +1,6 @@
-public class StringArrayVariable : AVariableArray
+using UnityEngine;
+
+public class StringArrayVariable : ScriptableObject
 {
     public string[] array;
 }

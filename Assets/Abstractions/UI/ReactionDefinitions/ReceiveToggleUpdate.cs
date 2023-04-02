@@ -1,7 +1,7 @@
 public class ReceiveToggleUpdate : ABoolInReaction
 {
     public BoolVariable valueHolder;
-    public AReactionComposite reactionForToggleChange;
+    public AReaction reactionForToggleChange;
 
     public override void React(bool value)
     {

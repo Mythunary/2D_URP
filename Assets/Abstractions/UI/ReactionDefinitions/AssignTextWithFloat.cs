@@ -1,8 +1,8 @@
-public class AssignTextWithFloat : AUIReaction
+public class AssignTextWithFloat : AReaction
 {
     public FloatVariable floatData;
     public StringVariable textData;
-    public AReactionComposite updateTextReaction;
+    public AReaction updateTextReaction;
 
     public override void React()
     {

@@ -1,4 +1,6 @@
-public class FloatArrayVariable : AVariableArray
+using UnityEngine;
+
+public class FloatArrayVariable : ScriptableObject
 {
     public float[] array;
 }

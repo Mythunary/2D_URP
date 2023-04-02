@@ -1,7 +1,7 @@
 public class ReceiveNewDropdownOption : AnIntInReaction
 {
     public IntVariable dataHolder;
-    public AReactionComposite reactToNewOption;
+    public AReaction reactToNewOption;
 
     public override void React(int value)
     {
