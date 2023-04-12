@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4f78b9be48cb642b416fbdca490866, type: 3}
   m_Name: FKeyUp
   m_EditorClassIdentifier: 
-  reactions: {fileID: 11400000, guid: fa7431dabbd7f5e46b6d8399623ac205, type: 2}
+  reactions: {fileID: 11400000, guid: 88a208fce7fce60408714280534bb52b, type: 2}
