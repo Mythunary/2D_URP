@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef3683e13477f3498d5eaed5648e178, type: 3}
+  m_Name: LeftShiftKey
+  m_EditorClassIdentifier: 
+  status: {fileID: 11400000, guid: 7ade2e452c4019044bf492aa23252e38, type: 2}
+  reaction: {fileID: 11400000, guid: 505ee11e74694b544add9b2c8e465405, type: 2}

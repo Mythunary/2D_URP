@@ -2,26 +2,27 @@ using UnityEngine;
 
 public class KeyboardInputReceptor : MonoBehaviour
 {
-    public AKeyHandlerArrayVariable keysDown;
-    public AKeyHandlerArrayVariable keysUp;
+    public AKeyCodeArrayVariable keys;
     
     private void Update()
     {        
         if (Input.anyKeyDown)
         {
-            for (int i = 0; i < keysDown.array.Length; i++)
+            for (int i = 0; i < keys.array.Length; i++)
             {
-                if (Input.GetKeyDown(keysDown.array[i].inputKey))
+                if (Input.GetKeyDown(keys.array[i].inputKey))
                 {
-                    keysDown.array[i].React();
+                    keys.array[i].status.value = true;
+                    keys.array[i].reaction.React();
                 }
             }
         }        
-        for (int i = 0; i < keysUp.array.Length; i++)
+        for (int i = 0; i < keys.array.Length; i++)
         {
-            if (Input.GetKeyUp(keysUp.array[i].inputKey))
+            if (Input.GetKeyUp(keys.array[i].inputKey))
             {
-                keysUp.array[i].React();
+                keys.array[i].status.value = false;
+                keys.array[i].reaction.React();
             }
         }
     }
