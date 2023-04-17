@@ -336,8 +336,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1365096695}
+  - component: {fileID: 1365096698}
   - component: {fileID: 1365096694}
   - component: {fileID: 1365096696}
+  - component: {fileID: 1365096697}
   m_Layer: 0
   m_Name: MAIN
   m_TagString: Untagged
@@ -388,6 +390,32 @@ MonoBehaviour:
   axisHandlersPositive: {fileID: 11400000, guid: a8d455af76230d44d8a7c32bdbbfbe93, type: 2}
   axisHandlersNegative: {fileID: 11400000, guid: 68a330784f4877a43b5149561ed0a780, type: 2}
   axisHandlersZero: {fileID: 11400000, guid: fc75d526dd17f974e88cb3abb7b27ada, type: 2}
+--- !u!114 &1365096697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365096693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36fd4e1bc09d1d489789a8e24ef2883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instances: {fileID: 11400000, guid: 8230b62e2a75bd840b787b09bf9fa088, type: 2}
+--- !u!114 &1365096698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365096693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ee4efaeb8e93f40b158dafa39dc6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inits: []
 --- !u!1 &1920116894
 GameObject:
   m_ObjectHideFlags: 0
