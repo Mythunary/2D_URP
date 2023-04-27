@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c20e26ca2415fe49b4b1ea7fa91edf8, type: 3}
-  m_Name: SpawnObject
+  m_Script: {fileID: 11500000, guid: ecbab80187f67a94395195922366c5a6, type: 3}
+  m_Name: InitialSpawnVelocity
   m_EditorClassIdentifier: 
-  value: {fileID: 7883345038867160397, guid: 259baf2212d5f9946ad602d4b4386f17, type: 3}
+  value: 8.21

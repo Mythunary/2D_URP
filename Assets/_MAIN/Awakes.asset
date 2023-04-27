@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eddbf020b64cac4ba314908ddfcc078, type: 3}
   m_Name: Awakes
   m_EditorClassIdentifier: 
-  array: []
+  array:
+  - {fileID: 11400000, guid: 7b2b7d9300da54c46a7129d15515eaf8, type: 2}

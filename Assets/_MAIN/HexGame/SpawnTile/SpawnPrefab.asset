@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eddbf020b64cac4ba314908ddfcc078, type: 3}
-  m_Name: Updates
+  m_Script: {fileID: 11500000, guid: 9c20e26ca2415fe49b4b1ea7fa91edf8, type: 3}
+  m_Name: SpawnPrefab
   m_EditorClassIdentifier: 
-  array:
-  - {fileID: 11400000, guid: f92aabc37ec97bc45a202c2e046f4cbf, type: 2}
+  value: {fileID: 7883345038867160397, guid: 259baf2212d5f9946ad602d4b4386f17, type: 3}

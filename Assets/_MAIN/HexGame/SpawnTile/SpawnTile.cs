@@ -4,9 +4,10 @@ public class SpawnTile : AReaction
 {
     public Vector2Variable initialSpawnPosition;
     public GameObjectVariable spawnPrefab;
+    public GameObjectVariable initialSpawn;
 
     public override void React()
     {
-        Instantiate(spawnPrefab.value, initialSpawnPosition.value, Quaternion.identity);
+        initialSpawn.value = Instantiate(spawnPrefab.value, initialSpawnPosition.value, Quaternion.identity);
     }
 }

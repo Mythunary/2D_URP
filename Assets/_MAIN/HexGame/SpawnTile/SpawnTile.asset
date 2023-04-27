@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialSpawnPosition: {fileID: 11400000, guid: 2f501b895697ccd4c80f6e0c06829b6b, type: 2}
   spawnPrefab: {fileID: 11400000, guid: 62cd7564e0b33084ca8d885efb6df947, type: 2}
+  initialSpawn: {fileID: 11400000, guid: a67875fb17aab9c4a8abedd23a23f17c, type: 2}
