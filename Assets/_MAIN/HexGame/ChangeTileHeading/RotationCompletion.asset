@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee158a2fc884d0440a31cfbf5f616552, type: 3}
   m_Name: RotationCompletion
   m_EditorClassIdentifier: 
-  duration: {fileID: 0}
-  triggerTime: {fileID: 0}
-  reaction: {fileID: 0}
+  duration: {fileID: 11400000, guid: 869d30d928f6a4b439a1601052314142, type: 2}
+  triggerTime: {fileID: 11400000, guid: c440bb1b97bc44a459b4d9bb8dc417bf, type: 2}
+  reaction: {fileID: 11400000, guid: b09e99d3b394c734c9f5c68ce9f2b456, type: 2}

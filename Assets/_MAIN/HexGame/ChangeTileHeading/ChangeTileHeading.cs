@@ -1,10 +1,10 @@
 public class ChangeTileHeading : AReaction
 {
     public Vector2Variable heading;
-    public Vector2Variable newHeading;
+    public AVector2OutReaction converter;
 
     public override void React()
     {
-        heading.value = newHeading.value;        
+        heading.value = converter.React();
     }
 }
