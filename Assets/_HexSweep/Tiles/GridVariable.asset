@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951935402783dfd45ad256685b852c35, type: 3}
   m_Name: GridVariable
   m_EditorClassIdentifier: 
-  variable: {fileID: 8690211784015360584, guid: 01abe8de998e3144ab8b76f2b9bd0821, type: 3}
+  variable: {fileID: 0}

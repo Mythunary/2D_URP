@@ -1,16 +1,16 @@
 public class IterateRotationOrder : AReaction
 {
-    public TileHeadingVariable heading;
+    public CoordinateHeadingVariable heading;
 
     public override void React()
     {
-        if(heading.value != TileHeadings.UpLeft)
+        if(heading.value != CoordinateHeading.UpLeft)
         {
             heading.value++;
         }
         else
         {
-            heading.value = TileHeadings.Up;
+            heading.value = CoordinateHeading.Up;
         }
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpawnTile : AReaction
 {
-    public Vector2Variable initialSpawnPosition;
+    public Vector3Variable initialSpawnPosition;
     public GameObjectVariable spawnPrefab;
     public GameObjectVariable initialSpawn;
 

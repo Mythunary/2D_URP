@@ -1,4 +1,4 @@
-public enum TileHeadings
+public enum CoordinateHeading
 {
     Up,
     UpRight,

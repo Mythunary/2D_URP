@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f406277957ffad488b1af8d1550bebf, type: 3}
-  m_Name: SpawnPositionController
+  m_Script: {fileID: 11500000, guid: c08e439950a5c3547b1413c0867406d1, type: 3}
+  m_Name: CellsWorldPositionsDictionary
   m_EditorClassIdentifier: 
-  value: {x: 0, y: -1}
+  dictionary:
+    m_Keys: []
+    m_Values: []

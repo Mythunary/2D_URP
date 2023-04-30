@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ChangeTileHeading
   m_EditorClassIdentifier: 
   heading: {fileID: 11400000, guid: d7593ffb9f892c64e847f3b003a4ff18, type: 2}
-  converter: {fileID: 11400000, guid: a767030305943cb48846f0c3a59537f7, type: 2}
+  converter: {fileID: 0}

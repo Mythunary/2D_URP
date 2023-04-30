@@ -1,7 +1,7 @@
 public class ChangeTileHeading : AReaction
 {
-    public Vector2Variable heading;
-    public AVector2OutReaction converter;
+    public Vector3Variable heading;
+    public AVector3OutReaction converter;
 
     public override void React()
     {
