@@ -4,7 +4,7 @@ public class AssignGridVariable : MonoBehaviour
 {
     public GridVariable grid;
 
-    private void Start()
+    private void Awake()
     {
         grid.value = GetComponent<Grid>();
     }

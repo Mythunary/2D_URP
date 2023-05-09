@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7768bf81b098554e8d3e69b217d111f, type: 3}
   m_Name: KeyCodes
   m_EditorClassIdentifier: 
-  array: []
+  array:
+  - {fileID: 11400000, guid: a6364dc6be78a934e99cdb4917b2fff5, type: 2}

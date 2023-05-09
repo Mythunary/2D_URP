@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9744640825493446a869e791ad19a21, type: 3}
   m_Name: LeftMouseReaction
   m_EditorClassIdentifier: 
-  value: {fileID: 0}
+  value: {fileID: 11400000, guid: a9b30b6fb611fb948a101c886dc4d79e, type: 2}

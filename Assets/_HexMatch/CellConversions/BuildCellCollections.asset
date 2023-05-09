@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d02e3d24294e24592e14f66210fcde, type: 3}
+  m_Name: BuildCellCollections
+  m_EditorClassIdentifier: 
+  grid: {fileID: 11400000, guid: 9d1a2ecf8505a934b8d9af035fce60c6, type: 2}
+  cellRings: {fileID: 11400000, guid: 86c810e363bbf6542987acd6ccc52327, type: 2}
+  cellsWorldPositions: {fileID: 11400000, guid: f74f3017b3b3f5647a92b9635055f760, type: 2}
+  cellsTargetCoordinates: {fileID: 11400000, guid: efaab37756bb4644f8589f4948c1852e, type: 2}
+  windingOrderElements:
+  - {fileID: 11400000, guid: ac3deee8338e1814ab5556e8c20f1044, type: 2}
+  - {fileID: 11400000, guid: cd669c93e042cca4787c64e3cf82afd7, type: 2}
+  - {fileID: 11400000, guid: 59504630755ea7142ae00d5e5fb9621d, type: 2}
+  - {fileID: 11400000, guid: d93ff81c3622da140b6b915a82e5ac03, type: 2}
+  - {fileID: 11400000, guid: 6f8ef73cebe75af4c914eb8b24cde041, type: 2}
+  - {fileID: 11400000, guid: b0396fd295ec1584eb4d438b984a2d86, type: 2}
