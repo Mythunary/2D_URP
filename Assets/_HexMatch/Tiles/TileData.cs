@@ -10,4 +10,6 @@ public class TileData
     public Vector3Int target;
     public float velocity;
     public int tileDataArrayIndex;
+    public Vector3Int[] neighborCoordinates;
+    public Color tileColor;
 }

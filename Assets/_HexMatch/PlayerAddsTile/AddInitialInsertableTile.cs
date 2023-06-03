@@ -5,6 +5,6 @@ public class AddInitialInsertableTile : AReaction
 
     public override void React()
     {
-        currentActiveInsertableTile.value = deliverTile.React();        
+        currentActiveInsertableTile.value = deliverTile.React();
     }
 }

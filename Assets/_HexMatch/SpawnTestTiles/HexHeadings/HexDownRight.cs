@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WindingOrderDownRight : WindingOrderElement
+public class HexDownRight : AHexHeading
 {
     public override Vector3Int React(int y)
     {

@@ -6,7 +6,7 @@ public class BuildCellCollections : AReaction
     public IntVariable cellRings;
     public Vector3IntKeyedVector3Dictionary cellsWorldPositions;
     public Vector3IntKeyedVector3IntDictionary cellsTargetCoordinates;
-    public WindingOrderElement[] windingOrderElements;
+    public AHexHeadingArrayVariable hexHeadings;
 
     public override void React()
     {
@@ -21,7 +21,7 @@ public class BuildCellCollections : AReaction
             {
                 switchHeadingIndex = j / i;
                 
-                updatedCoordinate = initialCoordinate + windingOrderElements[switchHeadingIndex].React(initialCoordinate.y);
+                updatedCoordinate = initialCoordinate + hexHeadings.array[switchHeadingIndex].React(initialCoordinate.y);
 
                 if(cellsTargetCoordinates.dictionary.ContainsKey(initialCoordinate) == false)
                 {

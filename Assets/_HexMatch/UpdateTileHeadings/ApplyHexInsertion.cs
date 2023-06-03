@@ -11,6 +11,7 @@ public class ApplyHexInsertion : AReaction
     public TileDataArrayVariable tileDatas;
     public ATileDataInReaction addTileToArray;
     public GameObjectVariable potentialInsertTile;
+    public ReturnNeighborCoordinates returnNeighbors;
     
     public override void React()
     {
@@ -21,8 +22,10 @@ public class ApplyHexInsertion : AReaction
             newTileData.current = Vector3Int.right;
             newTileData.target = coordsTargetCoords.dictionary[newTileData.current];
             newTileData.tile.transform.position = coordsToPositions.dictionary[newTileData.current];
+            newTileData.neighborCoordinates = returnNeighbors.React(Vector3Int.right);
             addTileToArray.React(newTileData);
             newTileData.tileDataArrayIndex = tileDatas.array.Length - 1;
+            newTileData.tileColor = potentialInsertTile.value.GetComponent<SpriteRenderer>().color;
 
             if (coordsTileData.dictionary.ContainsKey(newTileData.current) == false)
             {
@@ -56,6 +59,7 @@ public class ApplyHexInsertion : AReaction
             movedTileData.current = movedTo;
             movedTileData.target = coordsTargetCoords.dictionary[movedTo];
             movedTileData.tileDataArrayIndex = replacingTile.tileDataArrayIndex;
+            movedTileData.tileColor = coordsTileData.dictionary[replacingTile.current].tileColor;
 
             if (coordsTileData.dictionary.ContainsKey(movedTo) == true)
             {
@@ -74,7 +78,6 @@ public class ApplyHexInsertion : AReaction
                 coordsTileData.dictionary.Add(movedTo, movedTileData);
                 coordsTileData.dictionary[movedFrom] = replacingTile;
             }
-
         }
     }
 }

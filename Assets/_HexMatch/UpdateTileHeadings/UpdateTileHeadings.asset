@@ -16,3 +16,4 @@ MonoBehaviour:
   cellsHeadings: {fileID: 11400000, guid: efaab37756bb4644f8589f4948c1852e, type: 2}
   cellsWorldPositions: {fileID: 11400000, guid: f74f3017b3b3f5647a92b9635055f760, type: 2}
   cellsTileData: {fileID: 11400000, guid: 47944330398a772448388b4bd7713467, type: 2}
+  newHexInserted: {fileID: 11400000, guid: 67a1516a927276b4381080f90d248828, type: 2}

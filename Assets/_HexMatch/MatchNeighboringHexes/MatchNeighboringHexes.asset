@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67f87e8b31ea76448e3a4dbd9341ae1, type: 3}
+  m_Name: MatchNeighboringHexes
+  m_EditorClassIdentifier: 
+  TileDatas: {fileID: 11400000, guid: b70d39f9d35fcbc478c92b8447422107, type: 2}
+  TileDataCoords: {fileID: 11400000, guid: 47944330398a772448388b4bd7713467, type: 2}
+  matchColor: {fileID: 11400000, guid: 1fd7a53b736c12d48801fadd2e7f3abf, type: 2}
